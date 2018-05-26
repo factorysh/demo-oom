@@ -1,6 +1,6 @@
 
 bin/memtest: bin
-	docker run -ti --rm \
+	docker run -t --rm \
 		-v `pwd`:/data \
 		-w /data \
 		debian \
@@ -10,7 +10,7 @@ bin:
 	mkdir -p bin
 
 oom: | bin/memtest
-	docker run -ti --rm \
+	docker run -t \
 		-v `pwd`/bin:/usr/local/bin \
 		debian \
 		memtest
