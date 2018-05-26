@@ -8,3 +8,9 @@ bin/memtest: bin
 
 bin:
 	mkdir -p bin
+
+oom: | bin/memtest
+	docker run -ti --rm \
+		-v `pwd`/bin:/usr/local/bin \
+		debian \
+		memtest
