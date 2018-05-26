@@ -14,3 +14,7 @@ oom: | bin/memtest
 		-v `pwd`/bin:/usr/local/bin \
 		debian \
 		memtest
+
+# https://fr.wikipedia.org/wiki/Fork_bomb
+fork_bomb:
+	docker run -t debian perl -e "fork while fork"
