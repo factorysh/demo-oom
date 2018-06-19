@@ -1,0 +1,9 @@
+---
+
+stages:
+    - crashme
+
+crashme:
+    stage: crashme
+    script:
+        - exit 42
